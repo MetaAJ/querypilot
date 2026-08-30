@@ -37,5 +37,7 @@ available at `http://localhost:8000/health`.
 
 ## Qodo Code Review Evidence
 
-This section will link to the representative merged pull request and summarize the
-Qodo findings addressed before final submission.
+Qodo reviewed the representative TrueForge integration pull request before merge.
+The review reported zero material bugs, rule violations, and requirement gaps.
+
+Review PR: https://github.com/MetaAJ/querypilot/pull/1
