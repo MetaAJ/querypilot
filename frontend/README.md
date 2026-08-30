@@ -9,3 +9,8 @@ Planned endpoints:
 - `GET /health`
 - `POST /api/analysis`
 - `GET /api/forecast?horizon=4`
+- `GET /api/analysis/demo-events`
+
+The event endpoint is a temporary local contract. The final integration will replace
+it with streamed TrueForge session events while keeping the same event types for the
+activity timeline.
