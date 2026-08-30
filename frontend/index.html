@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QueryPilot | Revenue intelligence</title>
+  <link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✦</span><span><b>QueryPilot</b><small>Revenue intelligence</small></span></div>
+    <label>WORKSPACE</label>
+    <button class="nav active">◒ &nbsp; Investigation</button>
+    <button class="nav">⌁ &nbsp; Forecasts <i>soon</i></button>
+    <button class="nav">▤ &nbsp; Evidence library <i>soon</i></button>
+    <div class="sidebar-bottom"><div class="online"><span></span><div><b>Agent online</b><small>TrueForge session ready</small></div></div><div class="user"><strong>A</strong><div><b>Analyst workspace</b><small>Local demo</small></div></div></div>
+  </aside>
+  <main>
+    <header><div><small class="kicker">MONDAY · 09:42 AM</small><h1>Good morning, analyst <em>✦</em></h1></div><div class="actions"><button>⌕</button><button>?</button><button class="share">Share workspace ↗</button></div></header>
+    <section class="hero"><div class="ask panel"><small class="kicker">● &nbsp; ASK THE DATA</small><h2>What would you like to understand?</h2><p>QueryPilot investigates the story behind your metrics, then shows its work.</p><form id="analysis-form"><textarea id="question">Why did qualified leads change, and what should we expect next?</textarea><button class="run" type="submit">Run investigation <b>↗</b></button></form><div class="chips"><button data-question="Which campaign generated the highest-quality pipeline?">Campaign quality →</button><button data-question="Are support tickets associated with churn?">Churn signals →</button><button data-question="What should we expect next month?">Forecast demand →</button></div></div><div class="metric panel"><small class="kicker">LIVE SNAPSHOT <span class="live">● LIVE</span></small><strong>236 <small>qualified leads</small></strong><div class="change">↗ 12.4% <span>vs last month</span></div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><footer><span>ForgeFlow demo dataset</span><span>78 weeks</span></footer></div></section>
+    <div class="section-title"><div><small class="kicker">INVESTIGATION · <span id="session">LOCAL-DEMO</span></small><h2 id="title">Qualified lead movement</h2></div><span class="confidence">● High confidence</span></div>
+    <section class="two-col"><div class="panel activity"><div class="panel-head"><div><span class="icon blue">✦</span><span><b>Agent activity</b><small>TrueForge is coordinating the investigation</small></span></div><em>● Running</em></div><div class="timeline"><p class="done">✓ <span><b>Question understood</b><small>Metric contract created · 0.4s</small></span></p><p class="done">✓ <span><b>Schema inspected</b><small>7 tables found through MCP · 0.8s</small></span></p><p class="working">✧ <span><b>Specialists are investigating</b><small>Metric · SQL · Forecast analysts</small></span><i class="spinner"></i></p><p class="pending">◌ <span><b>Sandbox analysis</b><small>Waiting for the investigation plan</small></span></p><p class="pending">◌ <span><b>Human checkpoint</b><small>Approval required before export</small></span></p></div><footer><span>Session persists across reconnects</span><button>View trace ↗</button></footer></div><div class="panel contract"><div class="panel-head"><div><span class="icon purple">⌁</span><span><b>Metric contract</b><small>Agreed meaning before SQL runs</small></span></div></div><dl><dt>Metric</dt><dd>Qualified lead</dd><dt>Definition</dt><dd>Score ≥ 70 and lifecycle stage is qualified</dd><dt>Window</dt><dd>Month-over-month · 78 weeks</dd><dt>Limitations</dt><dd class="muted">No causal inference from this view</dd></dl><p class="verified">✓ Definition verified by Metric Analyst</p></div></section>
+    <section class="two-col lower"><div class="panel chart"><div class="panel-head"><div><span class="icon orange">↗</span><span><b>What happened · and what’s next</b><small>Qualified leads by month with four-period projection</small></span></div><div class="legend"><span>● Actual</span><span>● Forecast</span></div></div><svg viewBox="0 0 700 210" aria-label="Trend chart"><path class="grid" d="M20 30H680M20 85H680M20 140H680M20 195H680"/><path class="area" d="M20 174 L68 168 L116 156 L164 160 L212 143 L260 135 L308 126 L356 132 L404 112 L452 101 L500 92 L548 78 L596 70 L644 57 L680 45 L680 195 L20 195Z"/><path class="actual" d="M20 174 L68 168 L116 156 L164 160 L212 143 L260 135 L308 126 L356 132 L404 112 L452 101 L500 92 L548 78 L596 70 L644 57 L680 45"/><path class="forecast" d="M680 45 L680 39 L680 33 L680 27 L680 21"/><text x="22" y="207">JAN</text><text x="210" y="207">MAY</text><text x="405" y="207">SEP</text><text x="610" y="207">JAN</text></svg><footer><span><b>Model:</b> trend projection + seasonal baseline</span><span><b>Range:</b> 970–1,130 next 8 weeks</span></footer></div><div class="panel finding"><div class="panel-head"><div><span class="icon green">◈</span><span><b>Key finding</b><small>Evidence-backed interpretation</small></span></div></div><blockquote>“The signal is shifting from volume to quality.”</blockquote><p>Paid Search is bringing <b>31% more leads</b>, but its qualified rate fell from <b>18.4% to 9.7%</b>. Slower follow-up in APAC compounds the drop.</p><div class="evidence">⌁ <span><b>2 supporting queries</b><small>View evidence ledger</small></span> →</div><div class="score"><span></span></div><footer><span>Confidence score</span><b>84 / 100</b></footer></div></section>
+    <section class="panel sql"><div class="panel-head"><div><span class="icon blue">⌘</span><span><b>Work it did</b><small>Generated and validated in a read-only context</small></span></div><span class="safe">✓ READ-ONLY</span></div><pre>SELECT substr(created_at, 1, 7) AS month,
+       COUNT(*) AS qualified_leads,
+       ROUND(AVG(sales_response_hours), 1) AS avg_response_hours
+FROM leads
+WHERE lifecycle_stage = 'qualified'
+GROUP BY month ORDER BY month;</pre><footer><span>● Validated by SQL Guard</span><span>0.8s · 78 rows returned</span></footer></section>
+    <section class="approval"><strong>!</strong><div><small class="kicker">HUMAN CHECKPOINT · ACTION PAUSED</small><h3>Ready to export your investigation?</h3><p>QueryPilot prepared the evidence and forecast. It will create a shareable HTML report only after approval.</p><small>⟡ 1 file · forecast_report.html &nbsp;&nbsp; ◷ Persistent action</small></div><div><button class="reject">Not yet</button><button class="approve">Approve export ↗</button></div></section>
+    <footer class="page-foot"><span>QueryPilot v0.1 · ForgeFlow synthetic workspace</span><span>Built with <b>TrueForge</b> · Reviewed with <b>Qodo</b></span></footer>
+  </main>
+  <script src="/frontend/app.js"></script>
+</body>
+</html>
