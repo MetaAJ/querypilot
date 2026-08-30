@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 
 from .config import get_settings
 from .models import AnalysisResult, ForecastResult
+from .events import AgentEvent, local_demo_events
 from .service import run_forecast, run_local_analysis
 
 
@@ -64,3 +65,9 @@ def get_forecast(horizon: int = 4) -> ForecastResult:
     if not 1 <= horizon <= 12:
         raise ValueError("horizon must be between 1 and 12")
     return run_forecast(get_settings().database_path, horizon=horizon)
+
+
+@app.get("/api/analysis/demo-events", response_model=list[AgentEvent])
+def get_demo_events() -> list[AgentEvent]:
+    """Expose the UI event shape used by the local demo."""
+    return local_demo_events()
